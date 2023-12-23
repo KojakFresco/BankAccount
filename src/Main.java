@@ -11,10 +11,7 @@ public class Main {
         outTread.start();
     }
 
-    public static final Object KEY = new Object();
-
     public static void moneyOperation(int amount) throws InterruptedException {
-        synchronized (KEY) {
             if (-amount <= money) {
                 money += amount;
                 if (amount > 0) System.out.println("Успешно! На вашем счету теперь " + money + " рублей");
@@ -22,8 +19,6 @@ public class Main {
             }
             else System.out.println("Не хватает!");
             Thread.sleep(1300);
-        }
-
     }
 }
 
